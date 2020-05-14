@@ -18,14 +18,14 @@
 #'                      ,SIMPLIFY = FALSE)
 #'
 #'
-.callP3NreadOrg<-function(seq,size_range='151-500',Tm=c(58,60,70),name = "Hodor",
+.callP3NreadOrg<-function(seq,size_range='200-700',Tm=c(58,60,70),name = "Hodor",
                           primer3="/Users/adamcribbs/miniconda3/bin/primer3_core",
                           thermo.param="inst/extdata/primer3_config/",
                           settings="inst/extdata/primer3_settings.txt") {
   #print(excluded.regions)
   # make primer 3 input file
-  p3.input=tempfile()
-  p3.output=tempfile()
+  p3.input="infile.txt"
+  p3.output="outfile.txt"
   write(paste(sprintf("SEQUENCE_ID=%s\n",name),
               sprintf("SEQUENCE_TEMPLATE=%s\n",as.character(seq)),
               "PRIMER_TASK=pick_detection_primers\n",
@@ -33,6 +33,7 @@
               "PRIMER_PICK_INTERNAL_OLIGO=0\n",
               "PRIMER_PICK_RIGHT_PRIMER=1\n",
               "PRIMER_EXPLAIN_FLAG=1\n",
+              "SEQUENCE_PRIMER=AAGCAGTGGTATCAACGCAGAGTAC\n",
               "PRIMER_PAIR_MAX_DIFF_TM=3\n",
               sprintf("PRIMER_MIN_TM=%s\n" ,Tm[1]),
               sprintf("PRIMER_OPT_TM=%s\n" ,Tm[2]),

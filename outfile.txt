@@ -1,2 +1,0 @@
-PRIMER_ERROR=Settings file is empty: infile.txt
-=
