@@ -22,8 +22,8 @@ ncbi_primer_design_input <- function(id){
 
 # ENSEMBL
 ensembl_primer_design_input <- function(id,
-                                  host="http://uswest.ensembl.org/",
-                                  dataset="hsapiens_gene_ensembl",
+                                  host=NULL,
+                                  dataset=NULL,
                                   type="ensembl_transcript_id_version"){
 
 

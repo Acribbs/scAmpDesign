@@ -21,7 +21,8 @@
 .callP3NreadOrg<-function(seq,size_range='200-700',Tm=c(58,60,70),name = "Hodor",
                           primer3= NULL,
                           thermo.param=NULL,
-                          settings=NULL) {
+                          settings=NULL,
+                          excluded_regions=NULL) {
   #print(excluded.regions)
   # make primer 3 input file
   p3.input="infile.txt"
@@ -35,6 +36,7 @@
               "PRIMER_EXPLAIN_FLAG=1\n",
               "SEQUENCE_PRIMER=AAGCAGTGGTATCAACGCAGAGTAC\n",
               "PRIMER_PAIR_MAX_DIFF_TM=3\n",
+              sprintf("SEQUENCE_EXCLUDED_REGION=%s\n", excluded_regions),
               sprintf("PRIMER_MIN_TM=%s\n" ,Tm[1]),
               sprintf("PRIMER_OPT_TM=%s\n" ,Tm[2]),
               sprintf("PRIMER_MAX_TM=%s\n" ,Tm[3]),
