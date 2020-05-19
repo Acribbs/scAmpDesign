@@ -116,10 +116,10 @@ multiple_primer_design <- function(ncbi=NULL, transcript_id_version=NULL,
     output[[i]] <- primer3_output
 
     right_primer_pos <- primer3_output %>%
-      select(PRIMER_RIGHT_pos) %>% unlist %>%  as.integer()
+      dplyr::select(PRIMER_RIGHT_pos) %>% unlist %>%  as.integer()
 
     right_primer_len <- primer3_output %>%
-      select(PRIMER_RIGHT_len) %>% unlist %>%  as.integer()
+      dplyr::select(PRIMER_RIGHT_len) %>% unlist %>%  as.integer()
 
     excluded_regions <- paste0(excluded_regions, sprintf(" %s,%s", right_primer_pos, right_primer_len))
   }

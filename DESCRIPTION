@@ -14,7 +14,7 @@ Depends:
 Imports:
 	  magrittr,
 	  rmarkdown,
-	  "tidyverse"
+	  dplyr
 Suggests:
     knitr,
     testthat,
