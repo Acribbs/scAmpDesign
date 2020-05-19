@@ -1,12 +1,13 @@
 
 
 reverse_comp <- function(seq){
+  tryCatch(if(length(seq) == 0){TRUE}, finally=print("Looks like there is a problem, did you specify a real NCBI reference?"))
   toupper(Biostrings::reverseComplement(Biostrings::DNAString(seq)))
 }
 
 
 ncbi_ref_seq <- function(id){
-  seq <- ape::read.GenBank(id)
+  seq <- tryCatch(ape::read.GenBank(id), finally=print("Looks like there is a problem, did you specify a real NCBI reference?"))
 
   full_seq <- as.character(seq)
   paste(full_seq[[1]], collapse = "")

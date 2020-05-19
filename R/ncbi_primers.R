@@ -1,5 +1,5 @@
 # NCBI
-ncbi_primer_design <- function(id){
+ncbi_primer_design_input <- function(id){
   ref <- ncbi_ref_seq(id)
   ref <- reverse_comp(ref)
   # Extract polyA
@@ -21,7 +21,7 @@ ncbi_primer_design <- function(id){
 }
 
 # ENSEMBL
-ensembl_primer_design <- function(id,
+ensembl_primer_design_input <- function(id,
                                   host="http://uswest.ensembl.org/",
                                   dataset="hsapiens_gene_ensembl",
                                   type="ensembl_transcript_id_version"){
