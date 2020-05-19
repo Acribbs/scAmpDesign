@@ -33,6 +33,16 @@
 \description{
 call primer3 for a given set of DNAstringSet object
 }
+\examples{
+
+primers=mapply(.callP3NreadOrg,seq=sample.seq,
+                                  name=names(sample.seq),
+                     MoreArgs=list(primer3=primer3,size_range=size_range,Tm=Tm,
+                                   thermo.param=thermoParam,settings=settings)
+                     ,SIMPLIFY = FALSE)
+
+
+}
 \author{
 Altuna Akalin modified Arnaud Krebs' original function
 }

@@ -9,7 +9,7 @@
 #' @param therme.param thermodynamic parameters folder
 #' @param settings text file for parameters
 #' @author Altuna Akalin modified Arnaud Krebs' original function
-#' @example
+#' @examples
 #'
 #' primers=mapply(.callP3NreadOrg,seq=sample.seq,
 #'                                   name=names(sample.seq),

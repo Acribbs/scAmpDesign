@@ -2,3 +2,4 @@
 
 export(multiple_primer_design)
 export(single_primer_design)
+importFrom(magrittr,"%>%")
