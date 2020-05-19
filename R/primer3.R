@@ -19,9 +19,9 @@
 #'
 #'
 .callP3NreadOrg<-function(seq,size_range='200-700',Tm=c(58,60,70),name = "Hodor",
-                          primer3="/Users/adamcribbs/miniconda3/bin/primer3_core",
-                          thermo.param="inst/extdata/primer3_config/",
-                          settings="inst/extdata/primer3_settings.txt") {
+                          primer3= NULL,
+                          thermo.param=NULL,
+                          settings=NULL) {
   #print(excluded.regions)
   # make primer 3 input file
   p3.input="infile.txt"
