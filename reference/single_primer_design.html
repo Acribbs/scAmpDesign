@@ -166,7 +166,10 @@ the main transcript for FOXP3 is ENST00000376207.10.</p></td>
     <p>A set of primer pairs</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>single_primer_design</span>(<span class='kw'>ncbi</span><span class='kw'>=</span><span class='st'>"NC_045512"</span>, <span class='kw'>primer3</span><span class='kw'>=</span><span class='st'>"/Users/adamcribbs/miniconda3/bin/primer3_core"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in loadNamespace(name): there is no package called ‘ape’</span></div><div class='output co'>#&gt; [1] "Looks like there may be a problem, did you specify a real NCBI reference?\n                                                       Otherwise GenBank may be down"</div><div class='input'><span class='fu'>single_primer_design</span>(<span class='kw'>transcript_id_version</span><span class='kw'>=</span><span class='st'>"ENST00000376207.10"</span>, <span class='kw'>primer3</span><span class='kw'>=</span><span class='st'>"/Users/adamcribbs/miniconda3/bin/primer3_core"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in loadNamespace(name): there is no package called ‘biomaRt’</span></div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='fu'>single_primer_design</span>(<span class='kw'>ncbi</span><span class='kw'>=</span><span class='st'>"NC_045512"</span>, <span class='kw'>primer3</span><span class='kw'>=</span><span class='st'>"/Users/adamcribbs/miniconda3/bin/primer3_core"</span>)
+<span class='fu'>single_primer_design</span>(<span class='kw'>transcript_id_version</span><span class='kw'>=</span><span class='st'>"ENST00000376207.10"</span>, <span class='kw'>primer3</span><span class='kw'>=</span><span class='st'>"/Users/adamcribbs/miniconda3/bin/primer3_core"</span>)
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
