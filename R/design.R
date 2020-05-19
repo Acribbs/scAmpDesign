@@ -13,8 +13,10 @@
 #' @importFrom magrittr %>%
 #' @return A set of primer pairs
 #' @examples
+#' \dontrun{
 #' single_primer_design(ncbi="NC_045512", primer3="/Users/adamcribbs/miniconda3/bin/primer3_core")
 #' single_primer_design(transcript_id_version="ENST00000376207.10", primer3="/Users/adamcribbs/miniconda3/bin/primer3_core")
+#' }
 #' @export
 single_primer_design <- function(ncbi=NULL, transcript_id_version=NULL,
                                  primer3=NULL,
@@ -68,8 +70,10 @@ single_primer_design <- function(ncbi=NULL, transcript_id_version=NULL,
 #' @param num_primers Specify the number of primers to return. Defaults to 5.
 #' @return A set of primer pairs
 #' @examples
+#' \dontrun{
 #' multiple_primer_design(ncbi="NC_045512", primer3="/Users/adamcribbs/miniconda3/bin/primer3_core")
 #' multiple_primer_design(transcript_id_version="ENST00000376207.10", primer3="/Users/adamcribbs/miniconda3/bin/primer3_core")
+#' }
 #' @export
 multiple_primer_design <- function(ncbi=NULL, transcript_id_version=NULL,
                                  primer3=NULL,

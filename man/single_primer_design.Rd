@@ -37,6 +37,8 @@ A set of primer pairs
 This function will design a primer set to use with targeted single-cell sequencing.
 }
 \examples{
+\dontrun{
 single_primer_design(ncbi="NC_045512", primer3="/Users/adamcribbs/miniconda3/bin/primer3_core")
 single_primer_design(transcript_id_version="ENST00000376207.10", primer3="/Users/adamcribbs/miniconda3/bin/primer3_core")
+}
 }
