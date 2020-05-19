@@ -9,14 +9,6 @@
 #' @param therme.param thermodynamic parameters folder
 #' @param settings text file for parameters
 #' @author Altuna Akalin modified Arnaud Krebs' original function
-#' @examples
-#'
-#' primers=mapply(.callP3NreadOrg,seq=sample.seq,
-#'                                   name=names(sample.seq),
-#'                      MoreArgs=list(primer3=primer3,size_range=size_range,Tm=Tm,
-#'                                    thermo.param=thermoParam,settings=settings)
-#'                      ,SIMPLIFY = FALSE)
-#'
 #'
 .callP3NreadOrg<-function(seq,size_range='200-700',Tm=c(58,60,70),name = "Hodor",
                           primer3= NULL,
