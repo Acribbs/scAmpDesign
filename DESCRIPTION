@@ -2,11 +2,27 @@ Package: scAmpDesign
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R:
+    person(given = "Adam",
+           family = "Cribbs",
+           role = c("aut", "cre"),
+           email = "adam.cribbs@ndorms.ox.ac.uk",
+           comment = c(ORCID = "0000-0001-5288-3077"))
+Description: The goal of scAmpDesign is to design primers for single-cell sequencign experiments.
+Depends:
+    R (>= 3.2)
+Imports:
+	  magrittr,
+	  rmarkdown,
+	  "tidyverse"
+Suggests:
+    knitr,
+    testthat,
+    spelling,
+    pkgdown,
+    roxygen2 (>= 7.0.0)
+License: MIT + file LICENSE
+URL: https://github.com/Acribbs/scAmpDesign
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0

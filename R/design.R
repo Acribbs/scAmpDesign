@@ -10,6 +10,7 @@
 #' @param settings text file for parameters for primer 3. Currently within the inst/extdata
 #' @param ensembl_host Specify the host for ensembl. Defaults to "http://uswest.ensembl.org/".
 #' @param ensembl_dataset Specify the datasdets to be accessed by ensembl. Defaults to "hsapiens_gene_ensembl"
+#' @importFrom magrittr %>%
 #' @return A set of primer pairs
 #' @examples
 #' single_primer_design(ncbi="NC_045512", primer3="/Users/adamcribbs/miniconda3/bin/primer3_core")
