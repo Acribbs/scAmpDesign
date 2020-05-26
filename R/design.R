@@ -23,7 +23,16 @@ single_primer_design <- function(ncbi=NULL, transcript_id_version=NULL,
                                  thermo.param=system.file("extdata/primer3_config/", package="scAmpDesign"),
                                  settings=system.file("extdata/primer3_settings.txt", package="scAmpDesign"),
                                  ensembl_host="http://uswest.ensembl.org/",
-                                 dataset="hsapiens_gene_ensembl"){
+                                 dataset="hsapiens_gene_ensembl",
+                                 i7_index=NULL){
+
+  # Check to see if i7 index is NULL and then use random i7 if it is
+  if(length(is.na(i7_index)) == 0){
+    warning("i7_index is not specified and a random i7 will be used instead")
+    indexes <- read.csv(system.file("extdata/target sequencing indexes.csv", package="scAmpDesign"))
+    i7_index <- sample(indexes$index_sequence, 1)
+
+  }
 
   # Specify the location of primer3_core
   if(length(is.na(primer3)) == 0){
@@ -44,17 +53,19 @@ single_primer_design <- function(ncbi=NULL, transcript_id_version=NULL,
   if(length(is.na(ncbi)) == 0 & length(is.na(transcript_id_version)) != 0){
     seq <- ensembl_primer_design_input(id=transcript_id_version, host=ensembl_host, dataset=dataset)
   }
-  primer3_output = .callP3NreadOrg(seq = seq,
+  primer3_output = as.data.frame(.callP3NreadOrg(seq = seq,
                                    Tm = c(58, 60, 62),
                                    name = "Adamc",
                                    primer3=primer3,
                                    thermo.param=thermo.param,
                                    settings=settings
-                                   )
+                                   ))
+
+  primer3_output[["PRIMER_RIGHT_TO_ORDER"]] <- paste0("CAAGCAGAAGACGGCATACGAGAT", i7_index, "GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG", primer3_output[["PRIMER_RIGHT_SEQUENCE"]])
+
+  return(primer3_output)
+
 }
-
-
-
 #' Initiate the primer design for a single gene - will return multiple primers.
 #'
 #' This function will design a primer set to use with targeted single-cell sequencing.
@@ -116,6 +127,7 @@ multiple_primer_design <- function(ncbi=NULL, transcript_id_version=NULL,
                                      thermo.param=thermo.param,
                                      settings=settings,
                                      excluded_regions=excluded_regions)
+
 
     output[[i]] <- primer3_output
 
