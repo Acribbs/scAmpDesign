@@ -24,7 +24,8 @@ single_primer_design <- function(ncbi=NULL, transcript_id_version=NULL,
                                  settings=system.file("extdata/primer3_settings.txt", package="scAmpDesign"),
                                  ensembl_host="http://uswest.ensembl.org/",
                                  dataset="hsapiens_gene_ensembl",
-                                 i7_index=NULL){
+                                 i7_index=NULL,
+                                 output_file="output.csv"){
 
   # Check to see if i7 index is NULL and then use random i7 if it is
   if(length(is.na(i7_index)) == 0){
@@ -62,6 +63,8 @@ single_primer_design <- function(ncbi=NULL, transcript_id_version=NULL,
                                    ))
 
   primer3_output[["PRIMER_RIGHT_TO_ORDER"]] <- paste0("CAAGCAGAAGACGGCATACGAGAT", i7_index, "GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG", primer3_output[["PRIMER_RIGHT_SEQUENCE"]])
+
+  write.csv(primer3_output, file=output_file)
 
   return(primer3_output)
 
